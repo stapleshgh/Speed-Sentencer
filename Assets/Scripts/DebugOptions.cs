@@ -66,7 +66,7 @@ public class DebugOptions : MonoBehaviour
         counterScript.badVCount = counterScript.badVCount + 1; 
 
     }
-    private void BabySpawnVerdict()
+    public void BabySpawnVerdict()
     {
 
         Instantiate(BabyPrefab);
