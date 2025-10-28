@@ -115,8 +115,9 @@ public class AccusedBabyMove : MonoBehaviour
     {
         Sentenced = true;
 
-        Debug.Log("oof");
-        //Speechbubble.SetActive(false);
+        //Debug.Log("oof");
+        GameObject Speechbubble = this.gameObject.transform.GetChild(0).gameObject;
+        Speechbubble.SetActive(false);
         startPosition = transform.position;
         targetPosition = startpositionTransformd;
         //Debug.Log(startpositionTransformd.transform);
