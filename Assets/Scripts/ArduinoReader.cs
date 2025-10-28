@@ -3,7 +3,7 @@ using System.IO.Ports;
 
 public class ArduinoReader : MonoBehaviour
 {
-    SerialPort serial = new SerialPort("COM11", 9600);
+    SerialPort serial = new SerialPort("COM12", 9600);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
