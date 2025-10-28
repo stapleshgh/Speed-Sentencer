@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 5627241722292589783}
-  WaitTime: 1
+  WaitTime: 0.25
   lerpTime: 2
   Speechdelay: 1
   child1: {fileID: 5559577607023535494}

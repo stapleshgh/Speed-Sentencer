@@ -1,16 +1,17 @@
 using UnityEngine;
 using UnityEngine.Events; 
 using UnityEngine.UI; 
-using TMPro; 
+using TMPro;
+using System.Collections;
 
 public class DebugOptions : MonoBehaviour
 {
-    
-    public TMP_Dropdown dropList; 
 
-    public Counter counterScript; 
+    public TMP_Dropdown dropList;
 
-    public Button button; 
+    public Counter counterScript;
+
+    public Button button;
 
     private bool debounce;
 
@@ -20,7 +21,7 @@ public class DebugOptions : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
 
     }
 
@@ -34,43 +35,50 @@ public class DebugOptions : MonoBehaviour
         {
 
             button.onClick.AddListener(AddOneGoodVerdict);
-            
+
 
         }
         else if (dropList.value == 1)
         {
 
             button.onClick.AddListener(AddOneBadVerdict);
-            
+
 
         }
         else if (dropList.value == 2)
         {
             button.onClick.AddListener(BabySpawnVerdict);
-            
+
 
         }
-       
+
     }
 
     private void AddOneGoodVerdict()
     {
 
-        counterScript.goodVCount = counterScript.goodVCount + 1; 
+        counterScript.goodVCount = counterScript.goodVCount + 1;
 
     }
 
     private void AddOneBadVerdict()
     {
 
-        counterScript.badVCount = counterScript.badVCount + 1; 
+        counterScript.badVCount = counterScript.badVCount + 1;
 
     }
     public void BabySpawnVerdict()
     {
 
-        Instantiate(BabyPrefab);
+        StartCoroutine(DelayBaby(1));
 
+    }
+
+    IEnumerator DelayBaby(float waittime)
+    {
+        yield return new WaitForSeconds(waittime);
+
+        Instantiate(BabyPrefab);
     }
 
 }

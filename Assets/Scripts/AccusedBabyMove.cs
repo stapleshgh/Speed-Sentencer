@@ -76,7 +76,13 @@ public class AccusedBabyMove : MonoBehaviour
         }
         else
         {
+            
+
             GameObject tempObject = GameObject.Find("Canvas");
+
+            tempObject.GetComponent<Timer>().enabled = false;
+
+            tempObject.GetComponent<Timer>().timer = 5;
 
             DebugOptions DebugOptionsScript = tempObject.GetComponent<DebugOptions>();
 
@@ -94,6 +100,9 @@ public class AccusedBabyMove : MonoBehaviour
 
     void plea()
     {
+        GameObject tempObject = GameObject.Find("Canvas");
+
+        tempObject.GetComponent<Timer>().enabled = true;
 
 
         GameObject Speechbubble = this.gameObject.transform.GetChild(0).gameObject;
@@ -106,7 +115,7 @@ public class AccusedBabyMove : MonoBehaviour
     {
         Sentenced = true;
 
-        //Debug.Log("oof");
+        Debug.Log("oof");
         //Speechbubble.SetActive(false);
         startPosition = transform.position;
         targetPosition = startpositionTransformd;

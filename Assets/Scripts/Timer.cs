@@ -6,7 +6,10 @@ public class Timer : MonoBehaviour
 
     public TMP_Text timerText;
     
-    public float timer; 
+    public float timer;
+    bool DoOnce;
+
+    //public GameObject baby;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,8 +34,21 @@ public class Timer : MonoBehaviour
         {
 
             timer -= Time.deltaTime;
-            timerText.text = "Time: " + timer.ToString("0"); 
+            timerText.text = "Time: " + timer.ToString("0");
+            DoOnce = false;
+        }
+        else
+        {
+            
+            GameObject foundObject = GameObject.Find("AccusedBabyOne(Clone)");
+            AccusedBabyMove Script = foundObject.GetComponent<AccusedBabyMove>();
 
+            if (!DoOnce)
+            {
+                Script.BeGone();
+                DoOnce = true;
+            }
+            
         }
 
 
