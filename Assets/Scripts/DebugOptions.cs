@@ -12,7 +12,9 @@ public class DebugOptions : MonoBehaviour
 
     public Button button; 
 
-    private bool debounce; 
+    private bool debounce;
+
+    public GameObject BabyPrefab;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,19 +34,20 @@ public class DebugOptions : MonoBehaviour
         {
 
             button.onClick.AddListener(AddOneGoodVerdict);
-            button.onClick.RemoveListener(AddOneBadVerdict);
+            
 
         }
         else if (dropList.value == 1)
         {
 
             button.onClick.AddListener(AddOneBadVerdict);
-            button.onClick.RemoveListener(AddOneGoodVerdict);
+            
 
         }
         else if (dropList.value == 2)
         {
-
+            button.onClick.AddListener(BabySpawnVerdict);
+            
 
         }
        
@@ -61,6 +64,12 @@ public class DebugOptions : MonoBehaviour
     {
 
         counterScript.badVCount = counterScript.badVCount + 1; 
+
+    }
+    private void BabySpawnVerdict()
+    {
+
+        Instantiate(BabyPrefab);
 
     }
 

@@ -72,7 +72,7 @@ public class AccusedBabyMove : MonoBehaviour
 
         GameObject Speechbubble = this.gameObject.transform.GetChild(0).gameObject;
         Speechbubble.SetActive(true);
-        BeGone();
+        
     }
 
 
