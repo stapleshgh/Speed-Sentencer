@@ -18,6 +18,10 @@ public class AccusedBabyMove : MonoBehaviour
     private Vector3 startPosition;
     public Transform startpositionTransformd;
 
+    public GameObject greenbaby;
+    public GameObject bluebaby;
+    public GameObject pinkbaby;
+
     void Start()
     {
         Sentenced = false;
@@ -27,6 +31,22 @@ public class AccusedBabyMove : MonoBehaviour
         //Debug.Log(startpositionTransform.position);
         child1.transform.SetParent(null);
         child2.transform.SetParent(null);
+
+
+        float RanNum = Random.Range(0, 4);
+
+        if (RanNum == 0)
+        {
+            greenbaby.SetActive(true);
+        }
+        else if (RanNum == 1)
+        {
+            bluebaby.SetActive(true);
+        }
+        else
+        {
+            pinkbaby.SetActive(true);
+        }
     }
 
     IEnumerator StartLerping(float waittime)
@@ -56,6 +76,12 @@ public class AccusedBabyMove : MonoBehaviour
         }
         else
         {
+            GameObject tempObject = GameObject.Find("Canvas");
+
+            DebugOptions DebugOptionsScript = tempObject.GetComponent<DebugOptions>();
+
+            DebugOptionsScript.BabySpawnVerdict();
+
             Destroy(child1);
             Destroy(child2);
             Destroy(gameObject);
