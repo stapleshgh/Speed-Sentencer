@@ -11,6 +11,8 @@ public class AccusedBabyMove : MonoBehaviour
     public float Speechdelay = 1f;
     bool Sentenced = false;
 
+    public GameObject child1;
+    public GameObject child2;
 
 
     private Vector3 startPosition;
@@ -23,6 +25,8 @@ public class AccusedBabyMove : MonoBehaviour
         //startpositionTransform = transform;
         StartCoroutine(StartLerping(WaitTime));
         //Debug.Log(startpositionTransform.position);
+        child1.transform.SetParent(null);
+        child2.transform.SetParent(null);
     }
 
     IEnumerator StartLerping(float waittime)
@@ -31,7 +35,7 @@ public class AccusedBabyMove : MonoBehaviour
         yield return new WaitForSeconds(WaitTime); // Wait for 4 seconds
 
         float elapsedTime = 0f;
-        Debug.Log(elapsedTime.ToString());
+        //Debug.Log(elapsedTime.ToString());
 
         while (elapsedTime < lerpTime)
         {
@@ -52,7 +56,9 @@ public class AccusedBabyMove : MonoBehaviour
         }
         else
         {
-            //Destroy(gameObject);
+            Destroy(child1);
+            Destroy(child2);
+            Destroy(gameObject);
         }
         
     }
@@ -74,11 +80,11 @@ public class AccusedBabyMove : MonoBehaviour
     {
         Sentenced = true;
 
-        Debug.Log("oof");
+        //Debug.Log("oof");
         //Speechbubble.SetActive(false);
         startPosition = transform.position;
         targetPosition = startpositionTransformd;
-        Debug.Log(startpositionTransformd.transform);
+        //Debug.Log(startpositionTransformd.transform);
         StartCoroutine(StartLerping(WaitTime));
 
     }
