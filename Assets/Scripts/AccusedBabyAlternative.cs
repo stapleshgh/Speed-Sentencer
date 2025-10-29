@@ -21,7 +21,7 @@ public class AccusedBabyAlternative : MonoBehaviour
     public SpriteRenderer Evidencesr;
     public GameObject speechBubble;
 
-    
+    public BabyProperties propertyScript; 
 
     [SerializeField] Sprite[] babySprites;
     [SerializeField] Sprite newSprite;
@@ -37,11 +37,14 @@ public class AccusedBabyAlternative : MonoBehaviour
     [SerializeField] Sprite newEvidenceSprite;
 
 
-    
+    public GameObject propertyController; 
 
 
     void Start()
     {
+
+        
+        propertyScript = propertyController.GetComponent<BabyProperties>();
 
         newSprite = babySprites[(Random.Range(0, babySprites.Length))];
         gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
@@ -99,7 +102,7 @@ public class AccusedBabyAlternative : MonoBehaviour
                 break;
         }
 
-
+        propertyScript.Crime = Crime; 
         
 
         float GuiltDecide = Random.Range(0, 2);
@@ -115,6 +118,9 @@ public class AccusedBabyAlternative : MonoBehaviour
                 guilty = false;
                 break;
         }
+
+        propertyScript.guilty = guilty; 
+
     }
 
 
