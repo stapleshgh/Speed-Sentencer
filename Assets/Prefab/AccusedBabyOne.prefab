@@ -684,6 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7168731028223368225}
   - component: {fileID: 8931588396013459736}
+  - component: {fileID: 4802241545934215736}
   m_Layer: 0
   m_Name: AccusedBabyOne
   m_TagString: Untagged
@@ -719,7 +720,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9216989998247334990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f671c24139af6ca4eb5bc23684d93b78, type: 3}
   m_Name: 
@@ -734,3 +735,22 @@ MonoBehaviour:
   greenbaby: {fileID: 8343430592529255407}
   bluebaby: {fileID: 2022214479641158939}
   pinkbaby: {fileID: 4787763470910010921}
+--- !u!114 &4802241545934215736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216989998247334990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba71136705f64094eb7683d088bf174d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
+  waitTime: 4
+  lerpTime: 2
+  speechDelay: 1
+  correctSentence: 
+  sr: {fileID: 0}
+  speechBubble: {fileID: 0}
