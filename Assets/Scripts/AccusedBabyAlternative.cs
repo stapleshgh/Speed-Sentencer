@@ -7,6 +7,7 @@ public class AccusedBabyAlternative : MonoBehaviour
 {
     private Vector3 startPosition;
     public Vector3 targetPosition;
+    public float TargetModifyer = 15;
 
     public float waitTime = 4f; // Time to wait before starting lerping
     public float lerpTime = 2f; // Time taken to reach the target position
@@ -14,15 +15,21 @@ public class AccusedBabyAlternative : MonoBehaviour
     bool sentenced = false;
     public string correctSentence;
 
-    public SpriteRenderer sr;
+    public SpriteRenderer Facesr;
+    public SpriteRenderer Hairsr;
     public GameObject speechBubble;
 
+    
 
     [SerializeField] Sprite[] babySprites;
     [SerializeField] Sprite newSprite;
 
-    
-    
+
+    [SerializeField] Sprite[] faceSprites;
+    [SerializeField] Sprite newFaceSprite;
+
+    [SerializeField] Sprite[] hairSprites;
+    [SerializeField] Sprite newHairSprite;
 
 
     void Start()
@@ -31,28 +38,34 @@ public class AccusedBabyAlternative : MonoBehaviour
         newSprite = babySprites[(Random.Range(0, babySprites.Length))];
         gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
 
+        newFaceSprite = faceSprites[(Random.Range(0, faceSprites.Length))];
+        Facesr.sprite = newFaceSprite;
+
+        newHairSprite = hairSprites[(Random.Range(0, hairSprites.Length))];
+        Hairsr.sprite = newHairSprite;
+
         sentenced = false;
         startPosition = transform.position;
         
         StartCoroutine(StartLerping(waitTime));
 
 
-        targetPosition = (Vector2)transform.position + Vector2.left * 12;
+        targetPosition = (Vector2)transform.position + Vector2.left * TargetModifyer;
         
 
 
-        float RanNum = Random.Range(0, 4);
+        /*float RanNum = Random.Range(0, 4);
 
         switch (RanNum)
         {
             case 0:
-                sr.color = Color.blue; break;
+                Facesr.color = Color.blue; break;
             case 1:
-                sr.color = Color.magenta; break;
+                Facesr.color = Color.magenta; break;
             case 2:
-                sr.color = Color.green; break;
+                Facesr.color = Color.green; break;
 
-        }
+        }*/
 
         float rng2 = Random.Range(0, 4);
 
@@ -85,6 +98,7 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     IEnumerator StartLerping(float waitTime)
     {
+        
         float elapsedTime = 0f;
 
         while (elapsedTime < lerpTime)
@@ -92,7 +106,7 @@ public class AccusedBabyAlternative : MonoBehaviour
             float t = elapsedTime / lerpTime;
             transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             elapsedTime += Time.deltaTime;
-
+            
 
             yield return null;
         }
@@ -106,8 +120,8 @@ public class AccusedBabyAlternative : MonoBehaviour
         }
         else
         {
-            
 
+            Debug.Log("why");
             GameObject tempObject = GameObject.Find("Canvas");
 
             tempObject.GetComponent<Timer>().enabled = false;
@@ -143,11 +157,16 @@ public class AccusedBabyAlternative : MonoBehaviour
     {
         //
         sentenced = true;
-        
+
+        gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        Hairsr.flipX = true;
+        Facesr.flipX = true;
+
         speechBubble.SetActive(false);
         startPosition = transform.position;
+        targetPosition = (Vector2)transform.position + Vector2.right * TargetModifyer;
         //Debug.Log(startpositionTransformd.transform);
-        StartCoroutine(StartLerping(waitTime));
+        StartCoroutine(StartLerping(0));
 
     }
 
