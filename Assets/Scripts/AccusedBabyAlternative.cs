@@ -121,7 +121,7 @@ public class AccusedBabyAlternative : MonoBehaviour
         else
         {
 
-            Debug.Log("why");
+            
             GameObject tempObject = GameObject.Find("Canvas");
 
             tempObject.GetComponent<Timer>().enabled = false;
