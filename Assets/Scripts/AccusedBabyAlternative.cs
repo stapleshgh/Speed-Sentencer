@@ -17,8 +17,9 @@ public class AccusedBabyAlternative : MonoBehaviour
     public SpriteRenderer sr;
     public GameObject speechBubble;
 
-    
 
+    [SerializeField] Sprite[] babySprites;
+    [SerializeField] Sprite newSprite;
 
     
     
@@ -26,6 +27,10 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     void Start()
     {
+
+        newSprite = babySprites[(Random.Range(0, babySprites.Length))];
+        gameObject.GetComponent<SpriteRenderer>().sprite = newSprite;
+
         sentenced = false;
         startPosition = transform.position;
         
