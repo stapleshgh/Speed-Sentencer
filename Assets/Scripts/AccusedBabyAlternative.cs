@@ -13,10 +13,12 @@ public class AccusedBabyAlternative : MonoBehaviour
     public float lerpTime = 2f; // Time taken to reach the target position
     public float speechDelay = 1f;
     bool sentenced = false;
-    public string correctSentence;
+    public string Crime;
+    public bool guilty;
 
     public SpriteRenderer Facesr;
     public SpriteRenderer Hairsr;
+    public SpriteRenderer Evidencesr;
     public GameObject speechBubble;
 
     
@@ -30,6 +32,12 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     [SerializeField] Sprite[] hairSprites;
     [SerializeField] Sprite newHairSprite;
+
+    [SerializeField] Sprite[] evidenceSprites;
+    [SerializeField] Sprite newEvidenceSprite;
+
+
+    
 
 
     void Start()
@@ -50,6 +58,8 @@ public class AccusedBabyAlternative : MonoBehaviour
         StartCoroutine(StartLerping(waitTime));
 
 
+
+
         targetPosition = (Vector2)transform.position + Vector2.left * TargetModifyer;
         
 
@@ -67,24 +77,42 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         }*/
 
-        float rng2 = Random.Range(0, 4);
+        int rng2 = Random.Range(0, 2);
+
+        GameObject judgeBaby = GameObject.Find("JudgeBaby");
+
+        JudgeBabyAnnounce JudgeScript = judgeBaby.GetComponent<JudgeBabyAnnounce>();
+
+        JudgeScript.CrimeChoice = rng2;
 
         switch (rng2)
         {
             case 0:
-                correctSentence = "innocent";
+                Crime = "CookieTheft";
+                
                 break;
             case 1:
-                correctSentence = "scolding";
+                Crime = "MakingMess";
                 break;
             case 2:
-                correctSentence = "cocolemon";
+                Crime = "DrawingOnWall";
                 break;
-            case 3:
-                correctSentence = "clean";
+        }
+
+
+        
+
+        float GuiltDecide = Random.Range(0, 2);
+
+        switch (GuiltDecide)
+        {
+            case 0:
+                guilty = true;
+                newEvidenceSprite = evidenceSprites[(Random.Range(0, evidenceSprites.Length))];
+                Evidencesr.sprite = newEvidenceSprite;
                 break;
-            case 4:
-                correctSentence = "bedtime";
+            case 1: 
+                guilty = false;
                 break;
         }
     }
@@ -116,6 +144,16 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         if (!sentenced)
         {
+
+            GameObject judgeBaby = GameObject.Find("JudgeBaby");
+            //GameObject judgeBabySpeech = judgeBaby.transform.GetChild(0).gameObject;
+            //judgeBabySpeech.SetActive(true);
+            JudgeBabyAnnounce JudgeScript = judgeBaby.GetComponent<JudgeBabyAnnounce>();
+            JudgeScript.announce();
+
+
+            yield return new WaitForSeconds(1.5f);
+
             plea();
         }
         else
@@ -138,8 +176,8 @@ public class AccusedBabyAlternative : MonoBehaviour
         
     }
 
-
     
+
 
     void plea()
     {
@@ -155,7 +193,13 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     public void BeGone()
     {
-        //
+
+        GameObject judgeBaby = GameObject.Find("JudgeBaby");
+        JudgeBabyAnnounce JudgeScript = judgeBaby.GetComponent<JudgeBabyAnnounce>();
+
+        JudgeScript.Dennounce();
+
+        //judgeBaby.SetActive(false);
         sentenced = true;
 
         gameObject.GetComponent<SpriteRenderer>().flipX = true;

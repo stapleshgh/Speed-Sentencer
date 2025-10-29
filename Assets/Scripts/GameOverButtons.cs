@@ -7,12 +7,13 @@ public class GameOverButtons : MonoBehaviour
 {
 
     public Button restart; 
-    public Button quit; 
+    public Button quit;
+    public string SceneToLoad;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        SceneToLoad = "SetUpScene";
         restart.onClick.AddListener(restartGame);
 
     }
@@ -27,7 +28,7 @@ public class GameOverButtons : MonoBehaviour
     private void restartGame()
     {
 
-        SceneManager.LoadScene("UI"); 
+        SceneManager.LoadScene(SceneToLoad); 
 
     }
 

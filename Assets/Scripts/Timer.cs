@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
     
-        timer = 5; 
+        timer = 10; 
 
     }
 
