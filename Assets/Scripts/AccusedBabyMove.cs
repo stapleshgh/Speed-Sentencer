@@ -5,72 +5,97 @@ using UnityEngine.UI;
 
 public class AccusedBabyMove : MonoBehaviour
 {
-    public Transform targetPosition;
-    public float WaitTime = 4f; // Time to wait before starting lerping
-    public float lerpTime = 2f; // Time taken to reach the target position
-    public float Speechdelay = 1f;
-    bool Sentenced = false;
-
-    public GameObject child1;
-    public GameObject child2;
-
-
     private Vector3 startPosition;
-    public Transform startpositionTransformd;
+    public Vector3 targetPosition;
 
-    public GameObject greenbaby;
-    public GameObject bluebaby;
-    public GameObject pinkbaby;
+    public float waitTime = 4f; // Time to wait before starting lerping
+    public float lerpTime = 2f; // Time taken to reach the target position
+    public float speechDelay = 1f;
+    bool sentenced = false;
+    public string correctSentence;
+
+    public SpriteRenderer sr;
+    public GameObject speechBubble;
+
+    
+
+
+    
+    
+
 
     void Start()
     {
-        Sentenced = false;
+        sentenced = false;
         startPosition = transform.position;
-        //startpositionTransform = transform;
-        StartCoroutine(StartLerping(WaitTime));
-        //Debug.Log(startpositionTransform.position);
-        child1.transform.SetParent(null);
-        child2.transform.SetParent(null);
+        
+        StartCoroutine(StartLerping(waitTime));
+
+
+        targetPosition = (Vector2)transform.position + Vector2.left * 12;
+        
 
 
         float RanNum = Random.Range(0, 4);
 
-        if (RanNum == 0)
+        switch (RanNum)
         {
-            greenbaby.SetActive(true);
+            case 0:
+                sr.color = Color.blue; break;
+            case 1:
+                sr.color = Color.magenta; break;
+            case 2:
+                sr.color = Color.green; break;
+
         }
-        else if (RanNum == 1)
+
+        float rng2 = Random.Range(0, 4);
+
+        switch (rng2)
         {
-            bluebaby.SetActive(true);
-        }
-        else
-        {
-            pinkbaby.SetActive(true);
+            case 0:
+                correctSentence = "innocent";
+                break;
+            case 1:
+                correctSentence = "scolding";
+                break;
+            case 2:
+                correctSentence = "cocolemon";
+                break;
+            case 3:
+                correctSentence = "clean";
+                break;
+            case 4:
+                correctSentence = "bedtime";
+                break;
         }
     }
 
-    IEnumerator StartLerping(float waittime)
-    {
-        
-        yield return new WaitForSeconds(WaitTime); // Wait for 4 seconds
 
+    private void Update()
+    {
+
+        
+    }
+
+    IEnumerator StartLerping(float waitTime)
+    {
         float elapsedTime = 0f;
-        //Debug.Log(elapsedTime.ToString());
 
         while (elapsedTime < lerpTime)
         {
             float t = elapsedTime / lerpTime;
-            transform.position = Vector3.Lerp(startPosition, targetPosition.position, t);
+            transform.position = Vector3.Lerp(startPosition, targetPosition, t);
             elapsedTime += Time.deltaTime;
 
 
             yield return null;
         }
 
-        transform.position = targetPosition.position; // Ensure object reaches exactly at target position
+        transform.position = targetPosition; 
 
-        yield return new WaitForSeconds(Speechdelay); 
-        if (!Sentenced)
+
+        if (!sentenced)
         {
             plea();
         }
@@ -88,8 +113,7 @@ public class AccusedBabyMove : MonoBehaviour
 
             DebugOptionsScript.BabySpawnVerdict();
 
-            Destroy(child1);
-            Destroy(child2);
+            
             Destroy(gameObject);
         }
         
@@ -105,23 +129,20 @@ public class AccusedBabyMove : MonoBehaviour
         tempObject.GetComponent<Timer>().enabled = true;
 
 
-        GameObject Speechbubble = this.gameObject.transform.GetChild(0).gameObject;
-        Speechbubble.SetActive(true);
+        speechBubble.SetActive(true);
         
     }
 
 
     public void BeGone()
     {
-        Sentenced = true;
-
-        //Debug.Log("oof");
-        GameObject Speechbubble = this.gameObject.transform.GetChild(0).gameObject;
-        Speechbubble.SetActive(false);
+        //
+        sentenced = true;
+        
+        speechBubble.SetActive(false);
         startPosition = transform.position;
-        targetPosition = startpositionTransformd;
         //Debug.Log(startpositionTransformd.transform);
-        StartCoroutine(StartLerping(WaitTime));
+        StartCoroutine(StartLerping(waitTime));
 
     }
 

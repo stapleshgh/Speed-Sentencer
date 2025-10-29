@@ -2495,6 +2495,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: child1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: child2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: bluebaby
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: pinkbaby
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: greenbaby
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: targetPosition
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931588396013459736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: startpositionTransformd
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 9216989998247334990, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
       propertyPath: m_Name
       value: AccusedBabyOne

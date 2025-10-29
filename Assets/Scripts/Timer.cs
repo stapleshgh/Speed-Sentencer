@@ -37,19 +37,7 @@ public class Timer : MonoBehaviour
             timerText.text = "Time: " + timer.ToString("0");
             DoOnce = false;
         }
-        else
-        {
-            
-            GameObject foundObject = GameObject.Find("AccusedBabyOne(Clone)");
-            AccusedBabyMove Script = foundObject.GetComponent<AccusedBabyMove>();
-
-            if (!DoOnce)
-            {
-                Script.BeGone();
-                DoOnce = true;
-            }
-            
-        }
+        
 
 
     }
