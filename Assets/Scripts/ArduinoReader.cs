@@ -3,6 +3,8 @@ using System.IO.Ports;
 using UnityEngine.UI;
 using NUnit.Framework;
 using System.Collections;
+using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.InputSystem;
 
 public class ArduinoReader : MonoBehaviour
 {
@@ -24,21 +26,48 @@ public class ArduinoReader : MonoBehaviour
     void Update()
     {
         string data = serial.ReadLine();
-        int value = int.Parse(data);
-        Debug.Log(value * 0.001f);
+        float value = int.Parse(data);
 
 
-        activeMeter.transform.localScale = new Vector2(activeMeter.transform.localScale.x, value * 0.001f);
+        value *= 0.001f;
 
-        poll(value);
+        float mappedValue;
+
+        if (value > 0.5f)
+        {
+            mappedValue = value - 0.5f;
+            mappedValue *= 2;
+        } else
+        {
+            mappedValue = 0;
+        }
+
+        activeMeter.transform.localScale = new Vector2(activeMeter.transform.localScale.x, value);
+        poll(mappedValue);
+
+        
+        
+
     }
 
-    void poll(int value)
+    void poll(float value)
     {
-        if (value > 100)
+        if (value > 0)
         {
-            pollingMeter.transform.localScale = Vector2.Lerp(new Vector2(pollingMeter.transform.localScale.x, 0f), new Vector2(pollingMeter.transform.localScale.x, value * 0.001f), 10);
+            pollingMeter.transform.localScale = Vector2.Lerp(new Vector2(pollingMeter.transform.localScale.x, 0f), new Vector2(pollingMeter.transform.localScale.x, value), 10);
 
         } 
     }
+
+    float map(float s, float a1, float a2, float b1, float b2)
+    {
+        return b1 + (s - a1) * (b2 - b1) / (a2 - a1);
+    }
+
+
+    void OnMessageArrived(string msg)
+    {
+        Debug.Log(msg);
+    }
+
 }
