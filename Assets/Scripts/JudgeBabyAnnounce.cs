@@ -26,6 +26,11 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
+        if (CrimeChoice > JudgeCrimeTexts.Length)
+        {
+            CrimeChoice = JudgeCrimeTexts.Length - 1;
+        }
+
         JudgeCurrentCrimeText = JudgeCrimeTexts[CrimeChoice];
 
         JudgeCurrentCrimeText.SetActive(true);

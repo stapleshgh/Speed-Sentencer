@@ -361,8 +361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropList: {fileID: 1681897826}
   counterScript: {fileID: 136338332}
-  propertyScript: {fileID: 0}
-  timerScript: {fileID: 0}
+  propertyScript: {fileID: 393999238}
+  timerScript: {fileID: 136338331}
   button: {fileID: 1144388761}
   BabyPrefab: {fileID: 9216989998247334990, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
   crime: 
@@ -828,12 +828,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613077cac1ad9a04f9b0bdaed1a975ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrimeTexts:
-  - {fileID: 1252360238}
-  - {fileID: 1334157885}
-  - {fileID: 311621373}
-  CurrentCrimeText: {fileID: 0}
+  JudgeCrimeTexts: []
+  JudgeCurrentCrimeText: {fileID: 0}
   CrimeChoice: 0
+  BabyCrimeTexts: []
+  BabyCurrentCrimeText: {fileID: 0}
 --- !u!212 &659588177
 SpriteRenderer:
   m_ObjectHideFlags: 0

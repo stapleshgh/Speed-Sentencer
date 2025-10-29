@@ -135,7 +135,7 @@ public class DebugOptions : MonoBehaviour
     public void JudgedLevell()
     {
         crime = propertyScript.Crime; 
-        timerScript.timer = 0f; 
+        timerScript.timer = 1f; 
 
         if (crime == "Troublemaking")
         {
@@ -155,7 +155,7 @@ public class DebugOptions : MonoBehaviour
     public void JudgedLevel2()
     {
         crime = propertyScript.Crime; 
-        timerScript.timer = 0f; 
+        timerScript.timer = 1f; 
 
         if (crime == "CookieTheft")
         {
@@ -175,7 +175,7 @@ public class DebugOptions : MonoBehaviour
     public void JudgedLevel3()
     {
         crime = propertyScript.Crime; 
-        timerScript.timer = 0f; 
+        timerScript.timer = 1f; 
 
         if (crime == "Bullying")
         {
@@ -195,7 +195,7 @@ public class DebugOptions : MonoBehaviour
     public void JudgedLevel4()
     {
         crime = propertyScript.Crime; 
-        timerScript.timer = 0f; 
+        timerScript.timer = 1f; 
 
         if (crime == "MakingMess" || crime == "DrawingOnWall")
         {

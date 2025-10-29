@@ -43,7 +43,7 @@ public class AccusedBabyAlternative : MonoBehaviour
     void Start()
     {
 
-        
+        propertyController = GameObject.Find("CurrentBabyProperties");
         propertyScript = propertyController.GetComponent<BabyProperties>();
 
         newSprite = babySprites[(Random.Range(0, babySprites.Length))];
