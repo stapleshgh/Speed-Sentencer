@@ -191,6 +191,9 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         tempObject.GetComponent<Timer>().enabled = true;
 
+        GameObject judgeBaby = GameObject.Find("JudgeBaby");
+        JudgeBabyAnnounce JudgeScript = judgeBaby.GetComponent<JudgeBabyAnnounce>();
+        JudgeScript.Babyannounce();
 
         speechBubble.SetActive(true);
         
