@@ -28,8 +28,9 @@ public class DebugOptions : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        BabySpawnVerdict();
 
-        
+
 
     }
 
@@ -129,7 +130,7 @@ public class DebugOptions : MonoBehaviour
             counterScript.badVCount = counterScript.badVCount + 1;
 
         }
-
+        timerScript.buttonPressed = true;
     }
 
     public void JudgedLevell()
@@ -149,7 +150,7 @@ public class DebugOptions : MonoBehaviour
             counterScript.badVCount = counterScript.badVCount + 1;
 
         }
-
+        timerScript.buttonPressed = true;
     }
 
     public void JudgedLevel2()
@@ -169,7 +170,7 @@ public class DebugOptions : MonoBehaviour
             counterScript.badVCount = counterScript.badVCount + 1;
 
         }
-
+        timerScript.buttonPressed = true;
     }
 
     public void JudgedLevel3()
@@ -189,7 +190,7 @@ public class DebugOptions : MonoBehaviour
             counterScript.badVCount = counterScript.badVCount + 1;
 
         }
-
+        timerScript.buttonPressed = true;
     }
 
     public void JudgedLevel4()
@@ -209,7 +210,7 @@ public class DebugOptions : MonoBehaviour
             counterScript.badVCount = counterScript.badVCount + 1;
 
         }
-
+        timerScript.buttonPressed = true;
     }
 
     IEnumerator DelayBaby(float waittime)

@@ -37,7 +37,9 @@ public class AccusedBabyAlternative : MonoBehaviour
     [SerializeField] Sprite newEvidenceSprite;
 
 
-    public GameObject propertyController; 
+    public GameObject propertyController;
+
+    public float GuiltChance = 6f;
 
 
     void Start()
@@ -105,19 +107,21 @@ public class AccusedBabyAlternative : MonoBehaviour
         propertyScript.Crime = Crime; 
         
 
-        float GuiltDecide = Random.Range(0, 2);
-
-        switch (GuiltDecide)
+        float GuiltDecide = Random.Range(0, GuiltChance);
+        Debug.Log(GuiltDecide);
+        if ((GuiltDecide < 1))
         {
-            case 0:
-                guilty = true;
-                newEvidenceSprite = evidenceSprites[(Random.Range(0, evidenceSprites.Length))];
-                Evidencesr.sprite = newEvidenceSprite;
-                break;
-            case 1: 
-                guilty = false;
-                break;
+            guilty = false;
+            
         }
+        else
+        {
+            guilty = true;
+            newEvidenceSprite = evidenceSprites[(Random.Range(0, evidenceSprites.Length))];
+            Evidencesr.sprite = newEvidenceSprite;
+        }
+
+        
 
         propertyScript.guilty = guilty; 
 
@@ -170,7 +174,7 @@ public class AccusedBabyAlternative : MonoBehaviour
 
             tempObject.GetComponent<Timer>().enabled = false;
 
-            tempObject.GetComponent<Timer>().timer = 5;
+            tempObject.GetComponent<Timer>().timer = tempObject.GetComponent<Timer>().InitialTime;
 
             DebugOptions DebugOptionsScript = tempObject.GetComponent<DebugOptions>();
 
@@ -190,6 +194,7 @@ public class AccusedBabyAlternative : MonoBehaviour
         GameObject tempObject = GameObject.Find("Canvas");
 
         tempObject.GetComponent<Timer>().enabled = true;
+        tempObject.GetComponent<Timer>().buttonPressed = false;
 
         GameObject judgeBaby = GameObject.Find("JudgeBaby");
         JudgeBabyAnnounce JudgeScript = judgeBaby.GetComponent<JudgeBabyAnnounce>();

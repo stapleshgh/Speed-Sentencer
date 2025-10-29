@@ -1000,6 +1000,7 @@ MonoBehaviour:
   Hairsr: {fileID: 4848133137537248500}
   Evidencesr: {fileID: 5010295736278662039}
   speechBubble: {fileID: 5443396713494283910}
+  propertyScript: {fileID: 0}
   babySprites:
   - {fileID: -8945438146341193663, guid: f2975026be35aab4e8c85f08884c2e02, type: 3}
   - {fileID: 5821264310844908150, guid: f2975026be35aab4e8c85f08884c2e02, type: 3}
@@ -1024,6 +1025,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd9838479a3a6394697a85097db8b794, type: 3}
   - {fileID: 21300000, guid: aee53e51715a88e44b55febb79fa61b0, type: 3}
   newEvidenceSprite: {fileID: 0}
+  propertyController: {fileID: 0}
+  GuiltChance: 4
 --- !u!212 &7671067185849592425
 SpriteRenderer:
   m_ObjectHideFlags: 0
