@@ -3,9 +3,13 @@ using UnityEngine;
 public class JudgeBabyAnnounce : MonoBehaviour
 {
 
-    [SerializeField] GameObject[] CrimeTexts;
-    [SerializeField] GameObject CurrentCrimeText;
+    [SerializeField] GameObject[] JudgeCrimeTexts;
+    [SerializeField] GameObject JudgeCurrentCrimeText;
     public int CrimeChoice;
+
+    [SerializeField] GameObject[] BabyCrimeTexts;
+    [SerializeField] GameObject BabyCurrentCrimeText;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,9 +26,36 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-        CurrentCrimeText = CrimeTexts[CrimeChoice];
+        JudgeCurrentCrimeText = JudgeCrimeTexts[CrimeChoice];
 
-        CurrentCrimeText.SetActive(true);
+        JudgeCurrentCrimeText.SetActive(true);
+
+
+
+
+    }
+
+    public void Babyannounce()
+    {
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+
+        CrimeChoice *= 2;
+        float randomChoice = Random.Range(0,2);
+
+        if (randomChoice == 0)
+        {
+            BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice];
+            Debug.Log("cry");
+        }
+        if (randomChoice == 1)
+        {
+            BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice + 1];
+        }
+
+        BabyCurrentCrimeText.SetActive(true);
+
+
+
 
     }
 
@@ -32,7 +63,9 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
-        CurrentCrimeText.SetActive(false);
+        BabyCurrentCrimeText.SetActive(false);
+
+        JudgeCurrentCrimeText.SetActive(false);
 
     }
 
