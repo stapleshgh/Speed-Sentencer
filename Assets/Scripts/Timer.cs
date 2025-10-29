@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
         {
             
             GameObject foundObject = GameObject.Find("AccusedBabyOne(Clone)");
-            AccusedBabyMove Script = foundObject.GetComponent<AccusedBabyMove>();
+            AccusedBabyAlternative Script = foundObject.GetComponent<AccusedBabyAlternative>();
 
             if (!DoOnce)
             {
