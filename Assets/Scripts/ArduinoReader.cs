@@ -93,7 +93,7 @@ public class ArduinoReader : MonoBehaviour
 
     IEnumerator resetProgram()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
         startedRecording = false;
         value = 0f;
         valueMax = 0f;
