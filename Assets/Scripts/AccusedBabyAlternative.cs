@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Security.Policy;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,9 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     public SpriteRenderer Facesr;
     public SpriteRenderer Hairsr;
-    public SpriteRenderer Evidencesr;
+    public SpriteRenderer EvidencesrFace;
+    public SpriteRenderer EvidencesrHand;
+    public SpriteRenderer EvidencesrEar;
     public GameObject speechBubble;
 
     public BabyProperties propertyScript; 
@@ -141,7 +144,18 @@ public class AccusedBabyAlternative : MonoBehaviour
                 }
 
                 newEvidenceSprite = evidenceSprites[(evidencechoice)];
-                Evidencesr.sprite = newEvidenceSprite;
+                if ((evidencechoice == 0) || (evidencechoice == 4) || (evidencechoice == 5) || (    evidencechoice == 7) || (evidencechoice == 12) || (evidencechoice == 13) || (evidencechoice == 14))
+                {
+                    EvidencesrFace.sprite = newEvidenceSprite;
+                }
+                else if ((evidencechoice == 1) || (evidencechoice == 2) || (evidencechoice == 3) || (evidencechoice == 6) || (evidencechoice     == 9) || (evidencechoice == 10) || (evidencechoice == 15) || (evidencechoice == 16) || (evidencechoice == 17) || (evidencechoice == 18 || (evidencechoice == 20)))
+                {
+                    EvidencesrHand.sprite = newEvidenceSprite;
+                }
+                else
+                {
+                    EvidencesrEar.sprite = newEvidenceSprite;
+                }
             }
 
 
@@ -150,7 +164,19 @@ public class AccusedBabyAlternative : MonoBehaviour
         {
             guilty = true;
             newEvidenceSprite = evidenceSprites[(rng2)];
-            Evidencesr.sprite = newEvidenceSprite;
+            if ((rng2 == 0) || (rng2 == 4) || (rng2 == 5) || (rng2 == 7) || (rng2 == 12) || (rng2 == 13) || (rng2 == 14))
+            {
+                EvidencesrFace.sprite = newEvidenceSprite;
+            }
+            else if ((rng2 == 1) || (rng2 == 2) || (rng2 == 3) || (rng2 == 6) || (rng2 == 9) || (rng2 == 10) || (rng2 == 15) || (rng2 == 16) || (rng2 == 17) || (rng2 == 18 || (rng2 == 20)))
+            {
+                EvidencesrHand.sprite = newEvidenceSprite;
+            }
+            else
+            {
+                EvidencesrEar.sprite = newEvidenceSprite;
+            }
+            
 
             if (rng2 < 6)
             {

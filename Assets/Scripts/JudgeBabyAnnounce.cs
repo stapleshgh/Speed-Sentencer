@@ -69,11 +69,12 @@ public class JudgeBabyAnnounce : MonoBehaviour
             float ranAgain = Random.Range(0, 1);
             if (ranAgain > 0.8f)
             {
-                AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+                AccusedTalk.text = AccusedTextListGuilty[CrimeChoice];
             }
             else
             {
-                AccusedTalk.text = AccusedTextListGuilty[CrimeChoice];
+                AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+                
             }
 
 

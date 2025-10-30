@@ -8,8 +8,8 @@ public class Timer : MonoBehaviour
     public TMP_Text timerText;
     public Slider timeSlider; 
 
-    public float timer;
-    public float InitialTime;
+    public float timer = 10;
+    public float InitialTime = 10;
     bool DoOnce;
 
     public Counter counterScript;
@@ -30,8 +30,8 @@ public class Timer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InitialTime = 10;
-        timer = 10; 
+        //InitialTime = 10;
+        //timer = 10; 
 
         timeSlider.maxValue = InitialTime; 
         timeSlider.value = timeSlider.maxValue; 

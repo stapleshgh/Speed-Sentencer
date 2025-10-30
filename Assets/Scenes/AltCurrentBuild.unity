@@ -584,8 +584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1336734553}
   timeSlider: {fileID: 688108470}
-  timer: 10
-  InitialTime: 10
+  timer: 15
+  InitialTime: 15
   counterScript: {fileID: 136338332}
   DebugScript: {fileID: 136338333}
   judgeBaby: {fileID: 659588177}
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcff4486b124e7e41a68256ab8ace2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Crime: 
+  CrimeTypeProperty: 
   guilty: 0
 --- !u!4 &393999239
 Transform:
@@ -2511,7 +2511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7168731028223368225, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6899996
+      value: 5.75
       objectReference: {fileID: 0}
     - target: {fileID: 7168731028223368225, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3752,7 +3752,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.8, y: 1.8}
+  m_AnchoredPosition: {x: 56, y: 1.8}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1261593747
@@ -3965,7 +3965,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2924118864771949876, guid: 2595c0eb598e11e4c9d95d0ed89a738e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
