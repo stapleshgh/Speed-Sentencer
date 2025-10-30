@@ -19,6 +19,8 @@ public class ArduinoReader : MonoBehaviour
 
     bool startedRecording;
 
+    public DebugOptions debugOptions;
+
 
     SerialPort serial = new SerialPort("COM12", 9600);
 
@@ -55,6 +57,16 @@ public class ArduinoReader : MonoBehaviour
         activeMeter.transform.localScale = new Vector2(activeMeter.transform.localScale.x, value);
         poll(mappedValue);
 
+
+        if (valueMax > 0 && valueMax < 250)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                debugOptions.JudgedLevell();
+                StartCoroutine(resetProgram());
+            }
+           
+        }
         
         
 
