@@ -16,7 +16,14 @@ public class Timer : MonoBehaviour
 
     public DebugOptions DebugScript;
 
+    public SpriteRenderer judgeBaby; 
+
+    public Sprite hammerHit; 
+    public Sprite hammerUp; 
+
     public bool buttonPressed;
+
+    public AudioSource bellRing; 
 
     //public GameObject baby;
 
@@ -55,7 +62,7 @@ public class Timer : MonoBehaviour
         
         if (timer > 0)
         {
-
+            judgeBaby.sprite = hammerUp; 
             timer -= Time.deltaTime;
             timerText.text = "Time: " + timer.ToString("0");
             DoOnce = false;
@@ -63,7 +70,7 @@ public class Timer : MonoBehaviour
         else
         {
             
-
+            judgeBaby.sprite = hammerHit; 
 
             GameObject foundObject = GameObject.Find("AccusedBabyOne(Clone)");
             AccusedBabyAlternative Script = foundObject.GetComponent<AccusedBabyAlternative>();
@@ -72,7 +79,8 @@ public class Timer : MonoBehaviour
             {
                 if (!buttonPressed)
                 {
-                    DebugScript.JudgedLevel0();
+                    DebugScript.JudgedLevel0(); 
+                    bellRing.Play();
                 }
 
                 Script.BeGone();
