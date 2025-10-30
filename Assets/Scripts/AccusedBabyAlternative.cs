@@ -36,11 +36,12 @@ public class AccusedBabyAlternative : MonoBehaviour
     [SerializeField] Sprite[] evidenceSprites;
     [SerializeField] Sprite newEvidenceSprite;
 
+    [SerializeField] string[] CrimeList;
 
     public GameObject propertyController;
 
     public float GuiltChance = 6f;
-
+    public float evidenceChance = 3f;
 
     void Start()
     {
@@ -82,7 +83,7 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         }*/
 
-        int rng2 = Random.Range(0, 2);
+        int rng2 = Random.Range(0, CrimeList.Length);
 
         GameObject judgeBaby = GameObject.Find("JudgeBaby");
 
@@ -90,10 +91,12 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         JudgeScript.CrimeChoice = rng2;
 
-        switch (rng2)
+        Crime = CrimeList[rng2];
+
+        /*switch (rng2)
         {
             case 0:
-                Crime = "CookieTheft";
+                Crime = CrimeList[rng2];
                 
                 break;
             case 1:
@@ -102,7 +105,7 @@ public class AccusedBabyAlternative : MonoBehaviour
             case 2:
                 Crime = "DrawingOnWall";
                 break;
-        }
+        }*/
 
         propertyScript.Crime = Crime; 
         
@@ -112,12 +115,37 @@ public class AccusedBabyAlternative : MonoBehaviour
         if ((GuiltDecide < 1))
         {
             guilty = false;
-            
+
+            float evidenceDecide = Random.Range(0, evidenceChance);
+
+            if ((evidenceDecide < 1))
+            {
+                int evidencechoice = Random.Range(0, CrimeList.Length);
+
+                /*if ((evidencechoice == rng2))
+                {
+
+                }
+                else
+                {
+
+                }*/
+
+                while (evidencechoice == rng2)
+                {
+                    evidencechoice = Random.Range(0, CrimeList.Length);
+                }
+
+                newEvidenceSprite = evidenceSprites[(evidencechoice)];
+                Evidencesr.sprite = newEvidenceSprite;
+            }
+
+
         }
         else
         {
             guilty = true;
-            newEvidenceSprite = evidenceSprites[(Random.Range(0, evidenceSprites.Length))];
+            newEvidenceSprite = evidenceSprites[(rng2)];
             Evidencesr.sprite = newEvidenceSprite;
         }
 

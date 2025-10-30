@@ -3213,6 +3213,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4802241545934215736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: GuiltChance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802241545934215736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
+      propertyPath: evidenceChance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4802241545934215736, guid: e3736ffca12c53047ad0bd103f26ab7d, type: 3}
       propertyPath: propertyScript
       value: 
       objectReference: {fileID: 393999238}

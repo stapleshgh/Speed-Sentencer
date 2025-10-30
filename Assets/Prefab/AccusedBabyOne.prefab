@@ -1112,9 +1112,15 @@ MonoBehaviour:
   evidenceSprites:
   - {fileID: 21300000, guid: dd9838479a3a6394697a85097db8b794, type: 3}
   - {fileID: 21300000, guid: aee53e51715a88e44b55febb79fa61b0, type: 3}
+  - {fileID: -2972858017654944138, guid: f72582af1a4c9944293f49aa20f221cc, type: 3}
   newEvidenceSprite: {fileID: 0}
+  CrimeList:
+  - CookieTheft
+  - MakingMess
+  - DrawingOnWall
   propertyController: {fileID: 0}
-  GuiltChance: 4
+  GuiltChance: 1
+  evidenceChance: 1
 --- !u!212 &7671067185849592425
 SpriteRenderer:
   m_ObjectHideFlags: 0
