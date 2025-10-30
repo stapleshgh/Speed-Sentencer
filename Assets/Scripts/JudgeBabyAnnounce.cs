@@ -106,9 +106,9 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
 
-        BabyCurrentCrimeText.SetActive(false);
+        AccusedTalk.gameObject.SetActive(false);
 
-        JudgeCurrentCrimeText.SetActive(false);
+        JudgeTalk.gameObject.SetActive(false);
 
     }
 
