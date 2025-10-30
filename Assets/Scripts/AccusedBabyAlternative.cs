@@ -107,11 +107,11 @@ public class AccusedBabyAlternative : MonoBehaviour
                 break;
         }*/
 
-        propertyScript.Crime = Crime; 
-        
+        propertyScript.Crime = Crime;
 
         float GuiltDecide = Random.Range(0, GuiltChance);
-        Debug.Log(GuiltDecide);
+        //Debug.Log("GuiltChance[" + GuiltChance.ToString() + "] GuiltDecide[" + GuiltDecide.ToString() + "]");
+
         if ((GuiltDecide < 1))
         {
             guilty = false;
@@ -158,9 +158,10 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     private void Update()
     {
-
         
     }
+
+
 
     IEnumerator StartLerping(float waitTime)
     {

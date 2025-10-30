@@ -1119,8 +1119,8 @@ MonoBehaviour:
   - MakingMess
   - DrawingOnWall
   propertyController: {fileID: 0}
-  GuiltChance: 1
-  evidenceChance: 1
+  GuiltChance: 4
+  evidenceChance: 2
 --- !u!212 &7671067185849592425
 SpriteRenderer:
   m_ObjectHideFlags: 0
