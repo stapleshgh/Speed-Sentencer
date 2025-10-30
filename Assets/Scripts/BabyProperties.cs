@@ -3,7 +3,7 @@ using UnityEngine;
 public class BabyProperties : MonoBehaviour
 {
 
-    public string Crime; 
+    public string CrimeTypeProperty; 
     public bool guilty; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -16,6 +16,8 @@ public class AccusedBabyAlternative : MonoBehaviour
     public string Crime;
     public bool guilty;
 
+    public string CrimeType;
+
     public SpriteRenderer Facesr;
     public SpriteRenderer Hairsr;
     public SpriteRenderer Evidencesr;
@@ -109,7 +111,7 @@ public class AccusedBabyAlternative : MonoBehaviour
                 break;
         }*/
 
-        propertyScript.Crime = Crime;
+        
 
         float GuiltDecide = Random.Range(0, GuiltChance);
         //Debug.Log("GuiltChance[" + GuiltChance.ToString() + "] GuiltDecide[" + GuiltDecide.ToString() + "]");
@@ -149,10 +151,28 @@ public class AccusedBabyAlternative : MonoBehaviour
             guilty = true;
             newEvidenceSprite = evidenceSprites[(rng2)];
             Evidencesr.sprite = newEvidenceSprite;
+
+            if (rng2 < 6)
+            {
+                CrimeType = "MakingMess";
+            }
+            else if ((rng2 >= 6) && (rng2 < 11))
+            {
+                CrimeType = "Bullying";
+            }
+            else if ((rng2 >= 11) && (rng2 < 16))
+            {
+                CrimeType = "Theft";
+            }
+            else
+            {
+                CrimeType = "Troublemaking";
+            }
+
         }
 
-        
 
+        propertyScript.CrimeTypeProperty = CrimeType;
         propertyScript.guilty = guilty; 
 
     }
