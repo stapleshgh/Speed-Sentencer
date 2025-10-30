@@ -33,13 +33,13 @@ public class ArduinoReader : MonoBehaviour
     {
         
         string data = serial.ReadLine();
-        value = int.Parse(data);
+        value = float.Parse(data);
         Debug.Log(value);
         value = value * 0.001f;
 
         //processData();
 
-        valueMax *= 0.001f;
+        
 
         float mappedValue;
 
