@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+
 
 public class JudgeBabyAnnounce : MonoBehaviour
 {
@@ -10,10 +12,18 @@ public class JudgeBabyAnnounce : MonoBehaviour
     [SerializeField] GameObject[] BabyCrimeTexts;
     [SerializeField] GameObject BabyCurrentCrimeText;
 
+    TMP_Text JudgeTalk;
+
+    [SerializeField] string[] JudgeTextList;
+
+    [SerializeField] string[] AccusedTextListGuilty; //80%
+
+    [SerializeField] string[] AccusedTextListInnocent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //JudgeTalk.text = AccusedTextListInnocent[1];
     }
 
     // Update is called once per frame
@@ -51,7 +61,7 @@ public class JudgeBabyAnnounce : MonoBehaviour
         if (randomChoice == 0)
         {
             BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice];
-            Debug.Log("cry");
+            
         }
         if (randomChoice == 1)
         {
