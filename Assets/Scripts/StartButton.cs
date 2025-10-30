@@ -11,7 +11,9 @@ public class StartButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
+        startButton.onClick.AddListener(startGame);
+
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class StartButton : MonoBehaviour
     public void startGame()
     {
 
-        SceneManager.LoadScene("SplashScene");
+        SceneManager.LoadScene("SplashScreen");
 
     }
 

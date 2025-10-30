@@ -713,6 +713,7 @@ MonoBehaviour:
   restart: {fileID: 2040215710}
   quit: {fileID: 1906157524}
   SceneToLoad: AltCurrentBuild
+  SceneToLoadTitle: TitleScreenOne
 --- !u!223 &1294798406
 Canvas:
   m_ObjectHideFlags: 0
