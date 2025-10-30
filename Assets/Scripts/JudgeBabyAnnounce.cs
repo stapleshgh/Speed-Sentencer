@@ -28,7 +28,7 @@ public class JudgeBabyAnnounce : MonoBehaviour
 
         if (CrimeChoice > JudgeCrimeTexts.Length)
         {
-            Debug.Log("why");
+            
             CrimeChoice = JudgeCrimeTexts.Length - 1;
         }
 

@@ -1110,14 +1110,50 @@ MonoBehaviour:
   - {fileID: -1086207392447090945, guid: eb8add63c1dbbc84b824c22a1637812e, type: 3}
   newHairSprite: {fileID: 0}
   evidenceSprites:
-  - {fileID: 21300000, guid: dd9838479a3a6394697a85097db8b794, type: 3}
-  - {fileID: 21300000, guid: aee53e51715a88e44b55febb79fa61b0, type: 3}
-  - {fileID: -2972858017654944138, guid: f72582af1a4c9944293f49aa20f221cc, type: 3}
+  - {fileID: -2403919275376931074, guid: cacf89d80d915254abd9ec2fa0790a43, type: 3}
+  - {fileID: -3875618746956434429, guid: c663ae378560114428ab6bdd10444c26, type: 3}
+  - {fileID: 9099744842368663684, guid: e0a6cd0951005aa41ac4a5f5b3d5b089, type: 3}
+  - {fileID: 7780484456667337348, guid: 6966d3b87278762489ca7215fd6e4e8d, type: 3}
+  - {fileID: 21300000, guid: dae86ea168f0d8341a51d256d0705398, type: 3}
+  - {fileID: 21300000, guid: 01170b647d83b074f8a086115b5d0219, type: 3}
+  - {fileID: -5110731548806032159, guid: d70e0c11458fef6499df5f5b9cf3bc1a, type: 3}
+  - {fileID: 21300000, guid: 9a9e5b2c9bd65ed4cbfd802fa834be07, type: 3}
+  - {fileID: 5668622412177768710, guid: 8ef72beccb4e87948a30e45bb90aa4fb, type: 3}
+  - {fileID: 7935234321397735378, guid: e90affb81a546724394a1dde581dfae7, type: 3}
+  - {fileID: 9132784678072903462, guid: 7fc4ba616ba333640935eecb596220a6, type: 3}
+  - {fileID: -1892004485452186366, guid: efac710fa08ef594a978a184f39e79c5, type: 3}
+  - {fileID: 21300000, guid: 78301ac694c32f24a811fbe5e13c9953, type: 3}
+  - {fileID: 21300000, guid: ded5dfebff4f60c429f0c27b15ef5a1f, type: 3}
+  - {fileID: 21300000, guid: eac9c7af59c43014ebb39f075abba618, type: 3}
+  - {fileID: -3411414237561161789, guid: c5940d7b30abea5448eb42e9487dc4b3, type: 3}
+  - {fileID: -7924820434979704944, guid: c6bb39712165d424e83a84aabc51083b, type: 3}
+  - {fileID: -6445637956874663766, guid: 8a61afe849a7d9e498f8a025dd42fa49, type: 3}
+  - {fileID: -4032481707582436298, guid: 1374829be67fd8649abc8c633e9384e8, type: 3}
+  - {fileID: 80014894579379950, guid: e656542fb50834742a3556a50943f8e6, type: 3}
+  - {fileID: -8376229347262176984, guid: 4403582c1b6e4494db48ba5ca71f7927, type: 3}
   newEvidenceSprite: {fileID: 0}
   CrimeList:
-  - CookieTheft
-  - MakingMess
-  - DrawingOnWall
+  - floodingBathChamber
+  - unrolledToiletPaper
+  - throwingFood
+  - smearingJam
+  - spreadingMud
+  - spillingInk
+  - pouringMilk
+  - roughhousing
+  - lipstickSmear
+  - thrownBear
+  - flourDumping
+  - stolenCrayon
+  - eatingCookies
+  - queensStickers
+  - eatingCake
+  - spoonTheif
+  - earlyAlarm
+  - ribboningGoose
+  - tolietBoat
+  - paintingHamster
+  - pillowFight
   propertyController: {fileID: 0}
   GuiltChance: 4
   evidenceChance: 2
