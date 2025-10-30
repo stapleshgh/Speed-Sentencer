@@ -23,8 +23,8 @@ public class Counter : MonoBehaviour
     void Update()
     {
 
-        badVText.text = "Bad Verdicts: " + badVCount.ToString();
-        goodVText.text = "Good Verdicts: " + goodVCount.ToString();
+        badVText.text = badVCount.ToString();
+        goodVText.text = goodVCount.ToString();
 
     }
 }
