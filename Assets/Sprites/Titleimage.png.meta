@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: ded5dfebff4f60c429f0c27b15ef5a1f
+guid: 5538607d38e52664189dfdb5cb3aee99
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7988843990719953864
-    second: stickers_0
-  - first:
-      213: -3326453065361091851
-    second: stickers_1
+      213: -8229049651229159852
+    second: Titleimage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,35 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stickers_0
+      name: Titleimage_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 48
-        height: 49
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8cb70e868431ede60800000000000000
-      internalID: 7988843990719953864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stickers_1
-      rect:
-        serializedVersion: 2
-        x: 54
         y: 0
-        width: 44
-        height: 58
+        width: 954
+        height: 616
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5f29425bf8016d1d0800000000000000
-      internalID: -3326453065361091851
+      spriteID: 45e0f6b01fa8ccd80800000000000000
+      internalID: -8229049651229159852
       vertices: []
       indices: 
       edges: []
@@ -150,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stickers_0: 7988843990719953864
-      stickers_1: -3326453065361091851
+      Titleimage_0: -8229049651229159852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

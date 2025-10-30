@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+
 
 public class JudgeBabyAnnounce : MonoBehaviour
 {
@@ -10,10 +12,21 @@ public class JudgeBabyAnnounce : MonoBehaviour
     [SerializeField] GameObject[] BabyCrimeTexts;
     [SerializeField] GameObject BabyCurrentCrimeText;
 
+    public TMP_Text JudgeTalk;
+    public TMP_Text AccusedTalk;
+
+    public bool babyGuilt;
+
+    [SerializeField] string[] JudgeTextList;
+
+    [SerializeField] string[] AccusedTextListGuilty; //80%
+
+    [SerializeField] string[] AccusedTextListInnocent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        //JudgeTalk.text = AccusedTextListInnocent[1];
     }
 
     // Update is called once per frame
@@ -26,18 +39,18 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-        if (CrimeChoice > JudgeCrimeTexts.Length)
+        /*if (CrimeChoice > JudgeCrimeTexts.Length)
         {
-            Debug.Log("why");
+            
             CrimeChoice = JudgeCrimeTexts.Length - 1;
         }
 
         JudgeCurrentCrimeText = JudgeCrimeTexts[CrimeChoice];
 
         JudgeCurrentCrimeText.SetActive(true);
-
-
-
+        */
+        JudgeTalk.gameObject.SetActive(true);
+        JudgeTalk.text = JudgeTextList[CrimeChoice];
 
     }
 
@@ -45,20 +58,44 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-        CrimeChoice *= 2;
+        AccusedTalk.gameObject.SetActive(true);
+
+        if (!babyGuilt)
+        {
+            AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+        }
+        else
+        {
+            float ranAgain = Random.Range(0, 1);
+            if (ranAgain > 0.8f)
+            {
+                AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+            }
+            else
+            {
+                AccusedTalk.text = AccusedTextListGuilty[CrimeChoice];
+            }
+
+
+
+        }
+
+
+
+        /*CrimeChoice *= 2;
         float randomChoice = Random.Range(0,2);
 
         if (randomChoice == 0)
         {
             BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice];
-            Debug.Log("cry");
+            
         }
         if (randomChoice == 1)
         {
             BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice + 1];
         }
 
-        BabyCurrentCrimeText.SetActive(true);
+        BabyCurrentCrimeText.SetActive(true);*/
 
 
 
