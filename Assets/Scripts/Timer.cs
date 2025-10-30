@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro; 
+using UnityEngine.UI; 
 
 public class Timer : MonoBehaviour
 {
 
     public TMP_Text timerText;
-    
+    public Slider timeSlider; 
+
     public float timer;
     public float InitialTime;
     bool DoOnce;
@@ -24,6 +26,8 @@ public class Timer : MonoBehaviour
         InitialTime = 10;
         timer = 10; 
 
+        timeSlider.maxValue = InitialTime; 
+        timeSlider.value = timeSlider.maxValue; 
 
         buttonPressed = false;
 
@@ -35,7 +39,15 @@ public class Timer : MonoBehaviour
     {
 
         countDown();
+        changeSlider();
         
+    }
+
+    public void changeSlider()
+    {
+
+        timeSlider.value = timer; 
+
     }
 
     public void countDown()
