@@ -12,7 +12,10 @@ public class JudgeBabyAnnounce : MonoBehaviour
     [SerializeField] GameObject[] BabyCrimeTexts;
     [SerializeField] GameObject BabyCurrentCrimeText;
 
-    TMP_Text JudgeTalk;
+    public TMP_Text JudgeTalk;
+    public TMP_Text AccusedTalk;
+
+    public bool babyGuilt;
 
     [SerializeField] string[] JudgeTextList;
 
@@ -36,7 +39,7 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-        if (CrimeChoice > JudgeCrimeTexts.Length)
+        /*if (CrimeChoice > JudgeCrimeTexts.Length)
         {
             
             CrimeChoice = JudgeCrimeTexts.Length - 1;
@@ -45,9 +48,9 @@ public class JudgeBabyAnnounce : MonoBehaviour
         JudgeCurrentCrimeText = JudgeCrimeTexts[CrimeChoice];
 
         JudgeCurrentCrimeText.SetActive(true);
-
-
-
+        */
+        JudgeTalk.gameObject.SetActive(true);
+        JudgeTalk.text = JudgeTextList[CrimeChoice];
 
     }
 
@@ -55,7 +58,31 @@ public class JudgeBabyAnnounce : MonoBehaviour
     {
         this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
 
-        CrimeChoice *= 2;
+        AccusedTalk.gameObject.SetActive(true);
+
+        if (!babyGuilt)
+        {
+            AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+        }
+        else
+        {
+            float ranAgain = Random.Range(0, 1);
+            if (ranAgain > 0.8f)
+            {
+                AccusedTalk.text = AccusedTextListInnocent[CrimeChoice];
+            }
+            else
+            {
+                AccusedTalk.text = AccusedTextListGuilty[CrimeChoice];
+            }
+
+
+
+        }
+
+
+
+        /*CrimeChoice *= 2;
         float randomChoice = Random.Range(0,2);
 
         if (randomChoice == 0)
@@ -68,7 +95,7 @@ public class JudgeBabyAnnounce : MonoBehaviour
             BabyCurrentCrimeText = BabyCrimeTexts[CrimeChoice + 1];
         }
 
-        BabyCurrentCrimeText.SetActive(true);
+        BabyCurrentCrimeText.SetActive(true);*/
 
 
 

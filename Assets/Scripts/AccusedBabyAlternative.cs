@@ -91,6 +91,8 @@ public class AccusedBabyAlternative : MonoBehaviour
 
         JudgeScript.CrimeChoice = rng2;
 
+        JudgeScript.babyGuilt = guilty;
+
         Crime = CrimeList[rng2];
 
         /*switch (rng2)
