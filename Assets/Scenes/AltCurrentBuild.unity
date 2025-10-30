@@ -631,6 +631,17 @@ MonoBehaviour:
   guilty: 0
   cryingBabyAudio: {fileID: 136338338}
   happyBabyAudio: {fileID: 136338339}
+  happyAudioList:
+  - {fileID: 8300000, guid: d9e883a93d22fe64fbbbb2cd7a54dad4, type: 3}
+  - {fileID: 8300000, guid: 63ace5f17c1b91d4b99675a6f9db037f, type: 3}
+  - {fileID: 8300000, guid: 83a64eac54f279b4b9e36742f4728ea3, type: 3}
+  - {fileID: 8300000, guid: b492142859e1d454ba0955340127c1b1, type: 3}
+  SadAudioList:
+  - {fileID: 8300000, guid: 088ae7edcce3c2d438cef71425fe12bd, type: 3}
+  - {fileID: 8300000, guid: 8636b44cd69f52c4a835c8d9d6be6ab0, type: 3}
+  - {fileID: 8300000, guid: 35c633a08e4b011439ba5918601a8863, type: 3}
+  - {fileID: 8300000, guid: b2608c7599b00c441b289e4c2eced488, type: 3}
+  - {fileID: 8300000, guid: d84743e189e5b59438ed9f2ee0e5a105, type: 3}
 --- !u!114 &136338334
 MonoBehaviour:
   m_ObjectHideFlags: 0

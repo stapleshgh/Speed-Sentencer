@@ -27,7 +27,11 @@ public class DebugOptions : MonoBehaviour
 
     public AudioSource cryingBabyAudio; 
     
-    public AudioSource happyBabyAudio; 
+    public AudioSource happyBabyAudio;
+
+    [SerializeField] AudioClip[] happyAudioList;
+
+    [SerializeField] AudioClip[] SadAudioList;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -101,6 +105,8 @@ public class DebugOptions : MonoBehaviour
     {
 
         counterScript.goodVCount = counterScript.goodVCount + 1;
+
+        happyBabyAudio.clip = happyAudioList[Random.Range(0, happyAudioList.Length)];
         happyBabyAudio.Play();
 
     }
@@ -109,6 +115,9 @@ public class DebugOptions : MonoBehaviour
     {
 
         counterScript.badVCount = counterScript.badVCount + 1;
+
+        cryingBabyAudio.clip = SadAudioList[Random.Range(0,SadAudioList.Length)];
+
         cryingBabyAudio.Play();
 
     }
