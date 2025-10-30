@@ -25,6 +25,10 @@ public class DebugOptions : MonoBehaviour
 
     public bool guilty; 
 
+    public AudioSource cryingBabyAudio; 
+    
+    public AudioSource happyBabyAudio; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -97,6 +101,7 @@ public class DebugOptions : MonoBehaviour
     {
 
         counterScript.goodVCount = counterScript.goodVCount + 1;
+        happyBabyAudio.Play();
 
     }
 
@@ -104,6 +109,7 @@ public class DebugOptions : MonoBehaviour
     {
 
         counterScript.badVCount = counterScript.badVCount + 1;
+        cryingBabyAudio.Play();
 
     }
     public void BabySpawnVerdict()
@@ -121,13 +127,13 @@ public class DebugOptions : MonoBehaviour
         if (guilty == false)
         {
 
-            counterScript.goodVCount = counterScript.goodVCount + 1;
+            AddOneGoodVerdict();
 
         }
         else 
         {
 
-            counterScript.badVCount = counterScript.badVCount + 1;
+            AddOneBadVerdict();
 
         }
         timerScript.buttonPressed = true;
@@ -141,13 +147,13 @@ public class DebugOptions : MonoBehaviour
         if (crime == "Troublemaking")
         {
 
-            counterScript.goodVCount = counterScript.goodVCount + 1;
+            AddOneGoodVerdict();
 
         }
         else 
         {
 
-            counterScript.badVCount = counterScript.badVCount + 1;
+            AddOneBadVerdict();
 
         }
         timerScript.buttonPressed = true;
@@ -161,13 +167,13 @@ public class DebugOptions : MonoBehaviour
         if (crime == "CookieTheft")
         {
 
-            counterScript.goodVCount = counterScript.goodVCount + 1;
+            AddOneGoodVerdict();
 
         }
         else 
         {
 
-            counterScript.badVCount = counterScript.badVCount + 1;
+            AddOneBadVerdict();
 
         }
         timerScript.buttonPressed = true;
@@ -181,13 +187,13 @@ public class DebugOptions : MonoBehaviour
         if (crime == "Bullying")
         {
 
-            counterScript.goodVCount = counterScript.goodVCount + 1;
+            AddOneGoodVerdict();
 
         }
         else 
         {
 
-            counterScript.badVCount = counterScript.badVCount + 1;
+            AddOneBadVerdict();
 
         }
         timerScript.buttonPressed = true;
@@ -201,13 +207,13 @@ public class DebugOptions : MonoBehaviour
         if (crime == "MakingMess" || crime == "DrawingOnWall")
         {
 
-            counterScript.goodVCount = counterScript.goodVCount + 1;
+            AddOneGoodVerdict();
 
         }
         else 
         {
 
-            counterScript.badVCount = counterScript.badVCount + 1;
+            AddOneBadVerdict();
 
         }
         timerScript.buttonPressed = true;
