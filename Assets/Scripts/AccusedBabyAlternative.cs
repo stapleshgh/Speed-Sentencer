@@ -17,6 +17,8 @@ public class AccusedBabyAlternative : MonoBehaviour
     public string Crime;
     public bool guilty;
 
+    public bool pleaStarted = false;
+
     public string CrimeType;
 
     public SpriteRenderer Facesr;
@@ -268,6 +270,8 @@ public class AccusedBabyAlternative : MonoBehaviour
 
     void plea()
     {
+        pleaStarted = true;
+        propertyScript.pleaStarted = true;
         GameObject tempObject = GameObject.Find("Canvas");
 
         tempObject.GetComponent<Timer>().enabled = true;
@@ -298,6 +302,8 @@ public class AccusedBabyAlternative : MonoBehaviour
         Facesr.flipX = true;
 
         speechBubble.SetActive(false);
+        pleaStarted = false;
+        propertyScript.pleaStarted = false;
         startPosition = transform.position;
         targetPosition = (Vector2)transform.position + Vector2.right * TargetModifyer;
         //Debug.Log(startpositionTransformd.transform);

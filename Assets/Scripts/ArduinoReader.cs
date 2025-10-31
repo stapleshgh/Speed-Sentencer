@@ -22,6 +22,7 @@ public class ArduinoReader : MonoBehaviour
     public float valueMax;
 
     bool startedRecording;
+    bool hasNotSentenced = true;
 
 
     SerialPort serial = new SerialPort("COM12", 9600);
@@ -45,7 +46,7 @@ public class ArduinoReader : MonoBehaviour
             value = 0;
         }
 
-        Debug.Log(data + " " + value);
+        
         processData();
 
         
@@ -54,21 +55,36 @@ public class ArduinoReader : MonoBehaviour
         activeMeter.transform.localScale = new Vector2(activeMeter.transform.localScale.x, value);
         poll(valueMax);
 
-        
-        
-        if (valueMax > 0.01 && valueMax < 0.25f)
+        Debug.Log(hasNotSentenced);
+        if (hasNotSentenced && Input.GetKey(KeyCode.Space))
         {
-            debugOptions.JudgedLevell();
-        } else if (valueMax > 0.25f && valueMax < 0.5f)
-        {
-            debugOptions.JudgedLevel2();
-        } else if (valueMax > 0.5f && valueMax < 0.75f)
-        {
-            debugOptions.JudgedLevel3();
-        } else if (valueMax > 0.75f)
-        {
-            debugOptions.JudgedLevel4();
+            if (valueMax < 0.01f)
+            {
+                debugOptions.JudgedLevel0();
+            }
+
+            else if (valueMax > 0.01 && valueMax < 0.25f)
+            {
+                debugOptions.JudgedLevell();
+
+            }
+            else if (valueMax > 0.25f && valueMax < 0.5f)
+            {
+                debugOptions.JudgedLevel2();
+            }
+            else if (valueMax > 0.5f && valueMax < 0.75f)
+            {
+                debugOptions.JudgedLevel3();
+            }
+            else if (valueMax > 0.75f)
+            {
+                debugOptions.JudgedLevel4();
+            }
+
+            
         }
+
+        
     }
 
     void poll(float value)
@@ -83,26 +99,32 @@ public class ArduinoReader : MonoBehaviour
 
     void processData()
     {
+        if (value < 0.1)
+        {
+            value = 0;
+            hasNotSentenced = true;
+        }
+
         if (value > lastValue)
         {
             valueMax = value;
-
-        } else
-        {
-            
-        }
+            hasNotSentenced = false;
+        } 
 
         lastValue = value;
     }
 
-    void resetProgram()
+    public void resetProgram()
     {
-        
+        Debug.Log("babyLeft");
         startedRecording = false;
         value = 0f;
         valueMax = 0f;
         lastValue = 0f;
+        hasNotSentenced = true;
+        pollingMeter.transform.localScale = Vector2.Lerp(new Vector2(pollingMeter.transform.localScale.x, 0f), new Vector2(pollingMeter.transform.localScale.x, value), 10);
+
     }
 
- 
+
 }

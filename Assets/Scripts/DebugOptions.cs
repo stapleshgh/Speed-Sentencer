@@ -6,6 +6,8 @@ using System.Collections;
 
 public class DebugOptions : MonoBehaviour
 {
+    public ArduinoReader arduinoReader;
+
 
     public TMP_Dropdown dropList;
 
@@ -275,6 +277,8 @@ public class DebugOptions : MonoBehaviour
         yield return new WaitForSeconds(waittime);
 
         Instantiate(BabyPrefab);
+
+        arduinoReader.resetProgram();
     }
 
 }

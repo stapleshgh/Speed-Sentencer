@@ -621,6 +621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851b0fac5d5f7a44f820586d3d0f768e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arduinoReader: {fileID: 1261593750}
   dropList: {fileID: 1681897826}
   counterScript: {fileID: 136338332}
   propertyScript: {fileID: 393999238}
@@ -1335,6 +1336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CrimeTypeProperty: 
   guilty: 0
+  pleaStarted: 0
 --- !u!4 &393999239
 Transform:
   m_ObjectHideFlags: 0
@@ -4031,6 +4033,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeMeter: {fileID: 1599669937}
   pollingMeter: {fileID: 591516319}
+  ac:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  debugOptions: {fileID: 136338333}
+  valueMax: 0
 --- !u!1001 &1264262273
 PrefabInstance:
   m_ObjectHideFlags: 0
