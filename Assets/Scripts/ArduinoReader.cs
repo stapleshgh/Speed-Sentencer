@@ -34,12 +34,17 @@ public class ArduinoReader : MonoBehaviour
     {
         
         string data = serial.ReadLine();
-        value = int.Parse(data);
+        value = float.Parse(data); value *= -0.5f;
+        
+        if (value < 0)
+        {
+            value = 0;
+        }
 
-
+        Debug.Log(data + " " + value);
         processData();
 
-        valueMax *= 0.001f;
+        
 
         float mappedValue;
 
