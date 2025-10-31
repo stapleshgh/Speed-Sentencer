@@ -13,9 +13,13 @@ public class ArduinoReader : MonoBehaviour
 
     public Image pollingMeter;
 
+    public AnimationCurve ac;
+
+    public DebugOptions debugOptions;
+
     float lastValue;
     float value;
-    float valueMax;
+    public float valueMax;
 
     bool startedRecording;
 
@@ -46,23 +50,25 @@ public class ArduinoReader : MonoBehaviour
 
         
 
-        float mappedValue;
-
-        if (valueMax > 0.5f)
-        {
-            mappedValue = valueMax - 0.5f;
-            mappedValue *= 2;
-        } else
-        {
-            mappedValue = 0;
-        }
 
         activeMeter.transform.localScale = new Vector2(activeMeter.transform.localScale.x, value);
-        poll(mappedValue);
+        poll(valueMax);
 
         
         
-
+        if (valueMax > 0.01 && valueMax < 0.25f)
+        {
+            debugOptions.JudgedLevell();
+        } else if (valueMax > 0.25f && valueMax < 0.5f)
+        {
+            debugOptions.JudgedLevel2();
+        } else if (valueMax > 0.5f && valueMax < 0.75f)
+        {
+            debugOptions.JudgedLevel3();
+        } else if (valueMax > 0.75f)
+        {
+            debugOptions.JudgedLevel4();
+        }
     }
 
     void poll(float value)
@@ -79,32 +85,24 @@ public class ArduinoReader : MonoBehaviour
     {
         if (value > lastValue)
         {
-            startedRecording = true;
-            if (value > valueMax)
-            {
-                valueMax = value;
-            }
+            valueMax = value;
+
         } else
         {
-            if (startedRecording)
-            {
-                //this is where the animation plays
-                StartCoroutine(resetProgram());
-            }
+            
         }
 
         lastValue = value;
     }
 
-    IEnumerator resetProgram()
+    void resetProgram()
     {
-        yield return new WaitForSeconds(0);
+        
         startedRecording = false;
         value = 0f;
         valueMax = 0f;
         lastValue = 0f;
     }
 
-
-
+ 
 }
