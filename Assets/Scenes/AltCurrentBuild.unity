@@ -584,8 +584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerText: {fileID: 1336734553}
   timeSlider: {fileID: 688108470}
-  timer: 15
-  InitialTime: 15
+  timer: 5
+  InitialTime: 5
   counterScript: {fileID: 136338332}
   DebugScript: {fileID: 136338333}
   judgeBaby: {fileID: 659588177}
