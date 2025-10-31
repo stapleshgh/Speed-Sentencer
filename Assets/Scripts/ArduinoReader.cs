@@ -56,7 +56,7 @@ public class ArduinoReader : MonoBehaviour
         poll(valueMax);
 
         Debug.Log(hasNotSentenced);
-        if (hasNotSentenced && Input.GetKey(KeyCode.Space))
+        if (hasNotSentenced && Input.GetKey(KeyCode.Space) && debugOptions.propertyScript.pleaStarted)
         {
             if (valueMax < 0.01f)
             {
