@@ -33,6 +33,12 @@ public class DebugOptions : MonoBehaviour
 
     [SerializeField] AudioClip[] SadAudioList;
 
+
+    [SerializeField] string[] JudgePunishmentList;
+
+    public TMP_Text PunishmentTalkGuilty;
+    public TMP_Text PunishmentTalkInnocent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -41,6 +47,25 @@ public class DebugOptions : MonoBehaviour
 
 
     }
+
+    IEnumerator InnocentSpawn(float waitTime)
+    {
+        PunishmentTalkInnocent.gameObject.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        PunishmentTalkInnocent.gameObject.SetActive(false);
+
+    }
+
+    IEnumerator guiltySpawn(float waitTime)
+    {
+        PunishmentTalkGuilty.text = JudgePunishmentList[Random.Range(0, JudgePunishmentList.Length)];
+
+        PunishmentTalkGuilty.gameObject.SetActive(true);
+        yield return new WaitForSeconds(waitTime);
+        PunishmentTalkGuilty.gameObject.SetActive(false);
+
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -106,6 +131,9 @@ public class DebugOptions : MonoBehaviour
 
         counterScript.goodVCount = counterScript.goodVCount + 1;
 
+        
+
+
         happyBabyAudio.clip = happyAudioList[Random.Range(0, happyAudioList.Length)];
         happyBabyAudio.Play();
 
@@ -113,6 +141,8 @@ public class DebugOptions : MonoBehaviour
 
     private void AddOneBadVerdict()
     {
+
+        
 
         counterScript.badVCount = counterScript.badVCount + 1;
 
@@ -130,6 +160,10 @@ public class DebugOptions : MonoBehaviour
 
     public void JudgedLevel0()
     {
+
+        StartCoroutine(InnocentSpawn(1.5f));
+
+
         guilty = propertyScript.guilty; 
         timerScript.timer = 0f; 
 
@@ -166,6 +200,8 @@ public class DebugOptions : MonoBehaviour
 
         }
         timerScript.buttonPressed = true;
+
+        StartCoroutine(guiltySpawn(1.5f));
     }
 
     public void JudgedLevel2()
@@ -186,6 +222,8 @@ public class DebugOptions : MonoBehaviour
 
         }
         timerScript.buttonPressed = true;
+
+        StartCoroutine(guiltySpawn(1f));
     }
 
     public void JudgedLevel3()
@@ -206,6 +244,8 @@ public class DebugOptions : MonoBehaviour
 
         }
         timerScript.buttonPressed = true;
+
+        StartCoroutine(guiltySpawn(1f));
     }
 
     public void JudgedLevel4()
@@ -226,6 +266,8 @@ public class DebugOptions : MonoBehaviour
 
         }
         timerScript.buttonPressed = true;
+
+        StartCoroutine(guiltySpawn(1f));
     }
 
     IEnumerator DelayBaby(float waittime)

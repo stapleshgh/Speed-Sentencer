@@ -15,6 +15,8 @@ public class JudgeBabyAnnounce : MonoBehaviour
     public TMP_Text JudgeTalk;
     public TMP_Text AccusedTalk;
 
+    
+
     public bool babyGuilt;
 
     [SerializeField] string[] JudgeTextList;

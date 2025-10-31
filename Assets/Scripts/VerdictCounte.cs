@@ -9,7 +9,9 @@ public class Counter : MonoBehaviour
     public TMP_Text goodVText;
     
     public int badVCount; 
-    public int goodVCount; 
+    public int goodVCount;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
